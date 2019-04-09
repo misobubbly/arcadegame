@@ -64,6 +64,11 @@ Player.prototype.update = function() {
         this.x = 200;
         this.y = 380;
     }
+    
+    if (this.y <= 0) {
+        alert("You won!");
+        this.resetPlayer();
+    }
 
 };
 
@@ -97,7 +102,7 @@ let allEnemies = [];
 let enemyLocation = [60, 140, 220];
 
 // The starting location of the player is located at x=200, y=405
-let player = new Player(202, 405);
+let player = new Player(202, 405,0);
 
 // For each enemy located on the y axis from 0 on the x axis move at a speed of 200 
 // Until randomly regenerated in the enemy update function above
